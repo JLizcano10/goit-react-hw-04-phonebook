@@ -1,5 +1,6 @@
 import React from 'react';
 import { InputFilter, LabelFilter } from './Filter.styles';
+import PropTypes from 'prop-types';
 
 const Filter = ({ onFilter }) => {
   return (
@@ -12,4 +13,7 @@ const Filter = ({ onFilter }) => {
   );
 };
 
+Filter.propTypes = {
+  onFilter: PropTypes.func.isRequired,
+};
 export default Filter;

@@ -1,4 +1,5 @@
 import { ButtonListItem, ListItem } from './ContactElementList.styles';
+import PropTypes from 'prop-types';
 
 const ContactElementList = ({ contact, onDelete }) => {
   return (
@@ -11,4 +12,13 @@ const ContactElementList = ({ contact, onDelete }) => {
   );
 };
 
+ContactElementList.propTypes = {
+  // PropTypes.shape({}). Un objeto que tenga determinada estructura
+  contact: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    number: PropTypes.string.isRequired,
+  }),
+  onDelete: PropTypes.func.isRequired,
+};
 export default ContactElementList;
