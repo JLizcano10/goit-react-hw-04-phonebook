@@ -21,6 +21,7 @@ const App = () => {
     }
   }, []);
 
+  // Guardar contactos en el almacenamiento local cada vez que haya un cambio. Usar dos useEffect evita un ciclo de renderizado infinito pues aqui se actualiza contacts solo para almacenamiento.
   useEffect(() => {
     localStorage.setItem('contacts', JSON.stringify(contacts));
   }, [contacts]);
